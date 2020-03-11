@@ -19,6 +19,9 @@ public class WalletTransaction {
     private STATUS status;
     private String walletTransactionId;
 
+    public String getId() {
+        return id;
+    }
 
     public WalletTransaction(String preAssignedId, Long buyerId, Long sellerId, Long productId, String orderId) {
         if (preAssignedId != null && !preAssignedId.isEmpty()) {

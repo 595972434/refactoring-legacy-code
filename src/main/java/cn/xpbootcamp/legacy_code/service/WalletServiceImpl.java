@@ -9,6 +9,14 @@ import java.util.UUID;
 public class WalletServiceImpl implements WalletService {
     private UserRepository userRepository = new UserRepositoryImpl();
 
+    public WalletServiceImpl() {
+    }
+
+    public WalletServiceImpl(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
+
     public String moveMoney(String id, long buyerId, long sellerId, double amount) {
         User buyer = userRepository.find(buyerId);
         if (buyer.getBalance() >= amount) {
